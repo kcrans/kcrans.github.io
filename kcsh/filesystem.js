@@ -87,7 +87,7 @@ filesystem.insert(new Directory("dev", null));
 filesystem.insert(new Directory("tmp", null));
 const home_dir = filesystem.get_member("home");
 const dev_dir = filesystem.get_member("dev");
-const tmp_dir = filesytem.get_member("tmp");
+const tmp_dir = filesystem.get_member("tmp");
 
 home_dir.insert(new File("cat", null, "Meow Meow", "text"));
 home_dir.insert(new File("linkedin", null, "https://www.linkedin.com/in/kaleb-crans/", "link"));
