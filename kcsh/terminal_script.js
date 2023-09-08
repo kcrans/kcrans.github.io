@@ -34,6 +34,7 @@ const term = jQuery('#terminal').terminal({
       const lsd_img = new Image(200, 200);
       lsd_img.src = "lsd_search1.png";
       this.echo(lsd_img);
+      this.echo("wait, that isn't a directory!!!");
       function clean_up() {
         term_css.id = "terminal";
         cmd_css.classList.remove("lsd_cmd");
