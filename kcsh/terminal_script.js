@@ -24,7 +24,26 @@ const term = jQuery('#terminal').terminal({
     var has_file = false;
     var has_error = false;
     var has_dir = false;
-    if (optional_dirs.length > 0) {
+    if (optional_dirs.length == 1 && optional_dirs[0] == "-d") {
+      const term_css = document.getElementById("terminal");
+      term_css.id = "lsd_terminal";
+      const cmd_css = document.getElementsByClassName("cmd")[0];
+      const cmd_prompt_css = document.getElementsByClassName("cmd-prompt")[0];
+      cmd_css.classList.add("lsd_cmd");
+      cmd_prompt_css.classList.add("lsd_cmd_prompt");
+      const lsd_img = new Image(200, 200);
+      lsd_img.src = "lsd_search1.png";
+      this.echo(lsd_img);
+      function clean_up() {
+        term_css.id = "terminal";
+        cmd_css.classList.remove("lsd_cmd");
+        cmd_prompt_css.classList.remove("lsd_cmd_prompt");
+      }
+      play_audio("Starting_Over.mp3", clean_up);
+      //term_css.id = "terminal";
+      //console.log(style.getPropertyValue("--color"));
+    }
+    else if (optional_dirs.length > 0) {
       for (const file_or_dir of optional_dirs) {
         console.log(file_or_dir);
         if (!pointer.contains(file_or_dir)) {
@@ -69,21 +88,11 @@ const term = jQuery('#terminal').terminal({
       pointer.print_contents().forEach((x) => this.echo(x));
     }
   },
-  lsd: function() {
-    var style = getComputedStyle(document.body);
-    console.log(style.getPropertyValue("--color"));
-    //document.body.style.setProperty('--color', 'yellow');
-    const term_css = document.getElementById("terminal");
-    term_css.id = "lsd_terminal";
-    play_audio("Starting_Over.mp3", () => term_css.id = "terminal");
-    //term_css.id = "terminal";
-    console.log(style.getPropertyValue("--color"));
-  },
   exit: function() {
     this.echo("bye bye");
   },
   help: function() {
-    this.echo("There's much to see: \n ls: print current directory contents \n cd: change directory \n exit: close terminal and return to homepage")
+    this.echo("There's much to see: \n ls: print current directory contents \n cd: change directory \n cat: read a file \n exit: close terminal and return to homepage")
   },
   cd: function(where) {
     if (where === undefined) {

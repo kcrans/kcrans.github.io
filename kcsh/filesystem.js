@@ -87,7 +87,7 @@ filesystem.insert(new Directory("dev", null));
 filesystem.insert(new Directory("tmp", null));
 const home_dir = filesystem.get_member("home");
 const dev_dir = filesystem.get_member("dev");
-const tmp_dir = filesytem.get_member("tmp");
+const tmp_dir = filesystem.get_member("tmp");
 
 home_dir.insert(new File("cat", null, "Meow Meow", "text"));
 home_dir.insert(new File("linkedin", null, "https://www.linkedin.com/in/kaleb-crans/", "link"));
@@ -96,8 +96,9 @@ home_dir.insert(new File("resume", null, "https://kcrans.com/Resume_Kaleb_2022-6
 home_dir.insert(new Directory("projects", null));
 
 dev_dir.insert(new File("src", null, "https://github.com/kcrans/kcrans.github.io", "link"));
+dev_dir.insert(new File(".secret", null, "What band did some members of Uncle Tupelo start after that band split up?", "text"))
 
-tmp_dir.insert(new File("currently.txt", null, "Currently I'm getting cracked at liner algebra, working on ML projects, and learning about analog synths." , "text"));
+tmp_dir.insert(new File("now.txt", null, "Currently I'm getting cracked at liner algebra, working on ML projects, and learning about analog synths." , "text"));
 
 var pointer = home_dir;
 var last_pointer = home_dir;
