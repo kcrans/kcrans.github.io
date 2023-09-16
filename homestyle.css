@@ -43,18 +43,18 @@
 html {
   height: 100%;
   width: 100%;
-  font-size: 15 px;
+  font-size: 15px;
 }
 a {
   outline: none;
 }
 
 a:link {
-  color: grey;
+  color: maroon;
 }
 
 a:visited {
-  color: maroon;
+  color: grey;
 }
 
 
@@ -96,10 +96,12 @@ h1 {
 
 p {
     font-size: 1.4rem;
+    line-height: 2rem;
     margin-top: 1.4rem;
     margin-bottom: 1.4rem;
     padding-right: 0;
     width: 55%;
+    vertical-align: baseline;
 }
 
 #about {
@@ -107,6 +109,7 @@ p {
 }
 
 #terminal_block {
+  font-size: 1.4rem;
   color: maroon;
   position: fixed;
   bottom: 20px;
@@ -126,7 +129,18 @@ p {
   /*color: rgba(255, 255, 255, 1);*/
   padding: 0;
   /*border: solid 1px;*/
-  border-radius: 20px;
+  border-radius: 43px;
   box-shadow: 2px 2px 2px 2px maroon;
 }
 
+
+@media (max-width: 760px) {
+    body {
+        width: 84%;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+  p {
+    width: 100%;
+  }
+}
