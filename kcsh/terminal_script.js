@@ -91,6 +91,9 @@ const term = jQuery('#terminal').terminal({
   },
   exit: function() {
     this.echo("bye bye");
+    setTimeout(function() {
+          window.location.href = '/';
+    }, 1000);
   },
   help: function() {
     this.echo("There's much to see: \n ls: print current directory contents \n cd: change directory \n cat: read a file \n exit: close terminal and return to homepage")
