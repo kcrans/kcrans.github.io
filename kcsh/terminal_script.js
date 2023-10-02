@@ -86,14 +86,14 @@ const term = jQuery('#terminal').terminal({
       }
     }
     else {
-      pointer.print_contents().forEach((x) => this.echo(x));
+      pointer.print_contents().forEach((x) => this.echo(x)); // Case where no args given
     }
   },
   exit: function() {
     this.echo("bye bye");
     setTimeout(function() {
           window.location.href = '/';
-    }, 1000);
+    }, 2000); // Wait 2000ms before exiting. Gives enough time to read goodbye message.
   },
   help: function() {
     this.echo("There's much to see: \n ls: print current directory contents \n cd: change directory \n cat: read a file \n exit: close terminal and return to homepage")
