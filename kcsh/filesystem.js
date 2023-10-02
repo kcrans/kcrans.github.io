@@ -26,13 +26,13 @@ class Directory extends Tree_Object {
     this.#contents = contents;
   }
   print_contents() {
-    const sorted_keys = Array.from(this.#contents.keys()).sort()
+    const sorted_keys = Array.from(this.#contents.keys()).sort();
     function format_dirs(x) {
       if (x instanceof Directory) {
-        return x + "\"
+        return x + "\";
       }
       else {
-        return x
+        return x;
       }
     }
     return sorted_keys.map(format_dirs);
