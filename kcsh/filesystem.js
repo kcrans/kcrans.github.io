@@ -26,11 +26,12 @@ class Directory extends Tree_Object {
     this.#contents = contents;
   }
   print_contents() {
-    const sorted_keys = Array.from(this.#contents.keys()).sort();
+    const current_list = this.#contents; // Look at all the children of the current directory
+    const sorted_keys = Array.from(current_list.keys()).sort(); // Sort Alphabetically 
     function format_dirs(x) {
-      if (x instanceof Directory) {
-        return x + "\";
-      }
+      if (current_list.get(x) instanceof Directory) {
+        return x + "/"; # If it's a subdirectory, append a slash to it
+          }
       else {
         return x;
       }
