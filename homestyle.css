@@ -75,14 +75,14 @@ a:active {
 }
 
 body {
-    width: 87.5%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 12.5%;
-    font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
-    background-color: #fffff8;
-    color: #111;
-    max-width: 1400px;
+  width: 87.5%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 12.5%;
+  font-family: et-book, Palatino, "Palatino Linotype", "Palatino LT STD", "Book Antiqua", Georgia, serif;
+  background-color: #fffff8;
+  color: #111;
+  max-width: 1400px;
     /*counter-reset: sidenote-counter;*/
 }
 
@@ -152,6 +152,7 @@ p {
   #terminal_block {
     font-size: 10px;
     width: 10vw;
+    height: auto;
     padding: 0px;
   }
 }
@@ -159,4 +160,51 @@ p {
 pre {
     max-width: 100%;
     overflow-x: auto; /* adds horizontal scrolling to just the <pre> element if needed */
+}
+
+.buffer {
+  height: 16vw;
+  clear: both;
+}
+
+summary {
+  list-style: none; /* Remove default triangle on non-webkit browsers*/
+}
+
+#ButtonLine {
+    display: flex;                 /* Use flexbox to layout child elements in a row */
+  justify-content: space-between; /* Space child elements equally across the available space */
+  align-items: center;           /* Vertically center-align child elements */
+  cursor: pointer;               /* Change the cursor to a hand icon when hovering over the summary to indicate it's clickable */
+  font-weight: bold;             /* Make the text bold */
+}
+
+summary::-webkit-details-marker {
+  display: none; /*Remove defualt triangle on Safari */
+}
+
+summary::before {
+  content: "▶"; /* Unicode right-pointing triangle */
+  display: inline-block;
+  margin-right: 8px;
+  color: maroon;
+}
+details {
+  width: 55%;
+  
+}
+details[open] summary::before {
+  content: "▼"; /* Unicode down-pointing triangle */
+}
+
+#CopyButton {
+    margin-left: auto;             /* This is a flexbox trick. Since the parent (summary) is a flex container, this pushes the button to the right side by automatically filling the left margin */
+    cursor: pointer;               /* Change the cursor to a hand icon when hovering over the button to indicate it's clickable */
+    display: none;                 /* Hide the button by default */
+  color: maroon;
+
+}
+
+details[open] #CopyButton {
+    display: block;                /* When the dropdown (details element) has the 'open' attribute (meaning it's opened), display the button. This is achieved by using the attribute selector [open] */
 }
