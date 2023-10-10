@@ -94,7 +94,7 @@ h1 {
   line-height: 1;
 }
 
-p {
+p, details {
     font-size: 1.2rem;
     line-height: 2rem;
     margin-top: 1.4rem;
@@ -146,7 +146,7 @@ p {
         padding-left: 5%;
         padding-right: 10%;
     }
-  p {
+  p, details {
     width: 100%;
   }
   #terminal_block {
@@ -160,6 +160,11 @@ p {
 pre {
     max-width: 100%;
     overflow-x: auto; /* adds horizontal scrolling to just the <pre> element if needed */
+    font-family: Courier New,Courier,monospace;
+    font-size:1rem;
+    color:#747474;
+
+
 }
 
 .buffer {
@@ -171,13 +176,6 @@ summary {
   list-style: none; /* Remove default triangle on non-webkit browsers*/
 }
 
-#ButtonLine {
-    display: flex;                 /* Use flexbox to layout child elements in a row */
-  justify-content: space-between; /* Space child elements equally across the available space */
-  align-items: center;           /* Vertically center-align child elements */
-  cursor: pointer;               /* Change the cursor to a hand icon when hovering over the summary to indicate it's clickable */
-  font-weight: bold;             /* Make the text bold */
-}
 
 summary::-webkit-details-marker {
   display: none; /*Remove defualt triangle on Safari */
@@ -189,22 +187,28 @@ summary::before {
   margin-right: 8px;
   color: maroon;
 }
-details {
-  width: 55%;
-  
-}
+
 details[open] summary::before {
   content: "▼"; /* Unicode down-pointing triangle */
 }
 
 #CopyButton {
-    margin-left: auto;             /* This is a flexbox trick. Since the parent (summary) is a flex container, this pushes the button to the right side by automatically filling the left margin */
-    cursor: pointer;               /* Change the cursor to a hand icon when hovering over the button to indicate it's clickable */
-    display: none;                 /* Hide the button by default */
+  margin-right: auto;             /* This is a flexbox trick. Since the parent (summary) is a flex container, this pushes the button to the right side by automatically filling the left margin */
+  cursor: pointer;               /* Change the cursor to a hand icon when hovering over the button to indicate it's clickable */
+  display: flex;                 /* Hide the button by default */
+  text-align: left;
+  gap: 0.5rem;
+  background-color: transparent;
+  align-items: center;
+  border: 2px solid  #747474;;
   color: maroon;
-
 }
-
-details[open] #CopyButton {
-    display: block;                /* When the dropdown (details element) has the 'open' attribute (meaning it's opened), display the button. This is achieved by using the attribute selector [open] */
+#clipboard_svg {
+  display: block;
+}
+#checkmark_svg {
+  display: none;
+}
+#clipboard_svg, #checkmark_svg {
+  transition: opacity 0.3s ease;
 }
