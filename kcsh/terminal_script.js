@@ -4,6 +4,7 @@ function play_audio(file_path, callback) {
   sample.play();
 }
 
+/* Preload Figlet fonts */
 figlet.defaults({ fontPath: 'https://unpkg.com/figlet/fonts/' });
 figlet.preloadFonts(['Standard', 'Univers'], ready);
 
@@ -38,6 +39,7 @@ function ready() {
         const lsd_img = new Image(200, 200);
         lsd_img.src = "lsd_search1.png";
         this.echo(lsd_img);
+        this.echo("wait, that isn't a directory!!!");
         function clean_up() {
           term_css.id = "terminal";
           cmd_css.classList.remove("lsd_cmd");
@@ -89,11 +91,14 @@ function ready() {
         }
       }
       else {
-        pointer.print_contents().forEach((x) => this.echo(x));
+        pointer.print_contents().forEach((x) => this.echo(x)); // Case where no args given
       }
     },
     exit: function() {
       this.echo("bye bye");
+      setTimeout(function() {
+            window.location.href = '/';
+      }, 2000); // Wait 2000ms before exiting. Gives enough time to read goodbye message.
     },
     help: function() {
       this.echo("There's much to see: \n ls: print current directory contents \n cd: change directory \n cat: read a file \n exit: close terminal and return to homepage")
@@ -193,7 +198,6 @@ function ready() {
         },
         prompt: () => {return `user@kcrans.com ${pointer.name} % `}});
 }
-
 function render(term, text, font) {
   const cols = term.cols();
   return figlet.textSync(text, {
@@ -201,4 +205,4 @@ function render(term, text, font) {
     width: cols,
     whitespaceBreak: true
   });
-};
+}
