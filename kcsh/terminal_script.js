@@ -4,10 +4,6 @@ function play_audio(file_path, callback) {
   sample.play();
 }
 
-/* Preload Figlet fonts */
-figlet.defaults({ fontPath: 'https://unpkg.com/figlet/fonts/' });
-figlet.preloadFonts(['Standard', 'Univers'], ready);
-
 function ready() {
   const term = jQuery('#terminal').terminal({
     /* greetings: function(callback) {
@@ -193,16 +189,20 @@ function ready() {
         checkArity: false,
         greetings: false,
         onInit() {
-          this.echo(() => render(this, 'kcsh', 'Univers') +
+          this.echo(() => render_art() +
             `\n[[;rgba(78,154,6,0.99);]hi, take a look around. type 'help' for more info.`)
         },
         prompt: () => {return `user@kcrans.com ${pointer.name} % `}});
 }
-function render(term, text, font) {
-  const cols = term.cols();
-  return figlet.textSync(text, {
-    font: font || 'Standard',
-    width: cols,
-    whitespaceBreak: true
-  });
+function render_art() {
+  ascii_art = `
+88                               88
+88                               88
+88                               88
+88   ,d8   ,adPPYba,  ,adPPYba,  88,dPPYba,
+88 ,a8"   a8"     ""  I8[    ""  88P'    "8a
+8888[     8b           \`"Y8ba,   88       88
+88\`"Yba,  "8a,   ,aa  aa    ]8I  88       88
+88   \`Y8a  \`"Ybbd8"'  \`"YbbdP"'  88       88`
+  return ascii_art;
 }
