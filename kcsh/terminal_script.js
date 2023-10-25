@@ -101,7 +101,7 @@ function ready() {
       }, 2000); // Wait 2000ms before exiting. Gives enough time to read goodbye message.
     },
     help: function() {
-      this.echo("There's much to see: \n ls: print current directory contents \n cd: change directory \n cat: read a file \n exit: close terminal and return to homepage")
+      this.echo("Try some basic UNIX commands: \n ls: print current directory contents \n cd: change directory \n cat: read a file \n exit: close terminal and return to homepage")
     },
     cd: function(where) {
       if (where === undefined) {
@@ -194,7 +194,7 @@ function ready() {
         greetings: false,
         onInit() {
           this.echo(() => render(this, 'kcsh', 'Univers') +
-            `\n[[;rgba(78,154,6,0.99);]hi, take a look around?`)
+            `\n[[;rgba(78,154,6,0.99);]hi, take a look around. type 'help' for more info.`)
         },
         prompt: () => {return `user@kcrans.com ${pointer.name} % `}});
 }

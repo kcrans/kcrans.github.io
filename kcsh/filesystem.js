@@ -104,11 +104,14 @@ home_dir.insert(new File("linkedin", null, "https://www.linkedin.com/in/kaleb-cr
 home_dir.insert(new File("github", null, "https://github.com/kcrans", "link"));
 home_dir.insert(new File("resume", null, "https://kcrans.com/Resume_Kaleb_2022-6.pdf", "link"));
 home_dir.insert(new Directory("projects", null));
+const projects_dir = home_dir.get_member("projects");
+projects_dir.insert(new File("ray-bandit", null, "https://github.com/kcrans/ray-bandit", "link"));
+projects_dir.insert(new File("titi-monkey-tech", null, "https://github.com/kcrans/titi-monkey-tech", "link"))
 
 dev_dir.insert(new File("src", null, "https://github.com/kcrans/kcrans.github.io", "link"));
 dev_dir.insert(new File(".secret", null, "What band did some members of Uncle Tupelo start after that band split up?", "text"))
 
-tmp_dir.insert(new File("now.txt", null, "Currently I'm getting cracked at liner algebra, working on ML projects, and learning about analog synths." , "text"));
+tmp_dir.insert(new File("now.txt", null, "Currently I'm getting cracked at liner algebra, working on way too many projects, and learning about analog synths." , "text"));
 
 var pointer = home_dir;
 var last_pointer = home_dir;
