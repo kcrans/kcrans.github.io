@@ -94,14 +94,20 @@ h1 {
   line-height: 1;
 }
 
-p, details {
-    font-size: 1.2rem;
-    line-height: 2rem;
-    margin-top: 1.4rem;
-    margin-bottom: 1.4rem;
-    padding-right: 0;
-    width: 55%;
-    vertical-align: baseline;
+p, details, ul {
+  font-size: 1.2rem;
+  line-height: 2rem;
+  margin-top: 1.4rem;
+  margin-bottom: 1.4rem;
+  padding-right: 0;
+  width: 55%;
+  vertical-align: baseline;
+}
+li {
+  color: maroon;
+}
+li > span {
+  color: #111;
 }
 
 
@@ -156,15 +162,25 @@ p, details {
     padding: 0px;
   }
 }
+#campfire {
+  font-weight: bold;
+}
 
+#campfire .fire {
+  color: #c64000;
+}
+#campfire .wood {
+  color: #5a1616;
+}
+#campfire .rock {
+  color:#3f3f3f;
+}
 pre {
     max-width: 100%;
     overflow-x: auto; /* adds horizontal scrolling to just the <pre> element if needed */
     font-family: Courier New,Courier,monospace;
     font-size:1rem;
     color:#747474;
-
-
 }
 
 .buffer {
