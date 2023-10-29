@@ -190,7 +190,7 @@ function ready() {
         greetings: false,
         onInit() {
           this.echo(() => render_art() +
-            `\n[[;rgba(78,154,6,0.99);]hi, take a look around. type 'help' for more info.`)
+            `\n\n[[;rgba(78,154,6,0.99);]hi, take a look around. type 'help' for more info.`)
         },
         prompt: () => {return `user@kcrans.com ${pointer.name} % `}});
 }
