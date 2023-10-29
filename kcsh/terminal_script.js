@@ -206,3 +206,5 @@ function render_art() {
 88   \`Y8a  \`"Ybbd8"'  \`"YbbdP"'  88       88`
   return ascii_art;
 }
+
+ready();
