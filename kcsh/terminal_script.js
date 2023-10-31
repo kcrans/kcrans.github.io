@@ -18,6 +18,8 @@ function ready() {
     echo: function(input) {
       const some_text = String(input);
       const str_length = some_text.length;
+      console.log(some_text);
+      console.log(str_length);
       const message = `${"echo\n".repeat(str_length)}${some_text}`;
       this.typing('echo', 100, message, function() {return "ccvc"} );
     },
@@ -184,8 +186,23 @@ function ready() {
           }
         }
       }
-    }
-    }, {
+    },
+    touch: function(...optional_args) {
+      if (optional_args.length == 0)
+        this.echo("one touch is never enough");
+      else {
+        this.error("Error: This filesystem is read-only");
+      }
+    },
+    rm: function(...optional_args) {
+      if (optional_args.length == 0)
+        this.error("usage: rm [-f | -i] [-dIPRrvWx] file ...\n       rmunlink [--] file");
+      else {
+        this.error("not so fast");
+      }
+    
+    },
+  }, {
         checkArity: false,
         greetings: false,
         onInit() {
