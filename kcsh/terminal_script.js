@@ -202,12 +202,38 @@ function ready() {
       }
     
     },
+    vim: function(...optional_args) {
+      if (optional_args.length == 0)
+        this.echo("[[;rgba(78,154,6,0.99);]VIM - Vi IMproved\ntry opening a file]");
+      else {
+        const way_out = new Image(300, 203);
+        way_out.src = "first-contact-way.png";
+        this.error("hahaha, you are trapped🔒");
+        var counter = 0;
+        this.push(function(command) {
+          if (command == "wq" || command == "q!" || command == "wqa")           {
+            term.echo("whaaaaaat? this wasn't suppose to be easy");
+            term.pop();
+          }
+          else {
+            ++counter;
+            if (counter == 3) {
+              this.echo(way_out);
+              this.error("help, by way of @caseyjohnellis")
+            }
+            else
+              term.error("try again if you dare");
+          }
+        },
+                {prompt: ":",
+                name: "vi"});
+    }},
   }, {
         checkArity: false,
         greetings: false,
         onInit() {
           this.echo(() => render_art() +
-            `\n\n[[;rgba(78,154,6,0.99);]hi, take a look around. type 'help' for more info.`)
+            `\n\n[[;rgba(78,154,6,0.99);]hi, take a look around. type 'help' for more info.]`)
         },
         prompt: () => {return `user@kcrans.com ${pointer.name} % `}});
 }
