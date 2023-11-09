@@ -32,6 +32,11 @@ function ready() {
         term_css.id = "lsd_terminal";
         const cmd_css = document.getElementsByClassName("cmd")[0];
         const cmd_prompt_css = document.getElementsByClassName("cmd-prompt")[0];
+        const green_css = document.getElementsByClassName("green_text");
+        Array.from(green_css).forEach((element) => {
+          element.classList.add("lsd_green_text");
+        });
+        
         cmd_css.classList.add("lsd_cmd");
         cmd_prompt_css.classList.add("lsd_cmd_prompt");
         const lsd_img = new Image(200, 200);
@@ -42,6 +47,9 @@ function ready() {
           term_css.id = "terminal";
           cmd_css.classList.remove("lsd_cmd");
           cmd_prompt_css.classList.remove("lsd_cmd_prompt");
+          Array.from(green_css).forEach((element) => {
+            element.classList.remove("lsd_green_text");
+          });
         }
         play_audio("Starting_Over.mp3", clean_up);
         //term_css.id = "terminal";
@@ -203,15 +211,22 @@ function ready() {
     
     },
     vim: function(...optional_args) {
-      if (optional_args.length == 0)
-        this.echo("[[;rgba(78,154,6,0.99);]VIM - Vi IMproved\ntry opening a file]");
+      if (optional_args.length == 0) {
+        var vim_text = document.createElement("span");
+        vim_text.id = "vim";
+        vim_text.classList.add("green_text");
+        var text = document.createTextNode("VIM - Vi IMproved\ntry opening a file");
+        vim_text.appendChild(text);
+        this.echo(vim_text);
+      }
       else {
         const way_out = new Image(300, 203);
         way_out.src = "first-contact-way.png";
         this.error("hahaha, you are trapped🔒");
         var counter = 0;
         this.push(function(command) {
-          if (command == "wq" || command == "q!" || command == "wqa")           {
+          command = command.trim();
+          if (command == "q" || command == "wq" || command == "q!" || command == "wqa")           {
             term.echo("whaaaaaat? this wasn't suppose to be easy");
             term.pop();
           }
@@ -228,12 +243,29 @@ function ready() {
                 {prompt: ":",
                 name: "vi"});
     }},
+    test: function(...optional_args) { 
+      var intro_text = document.createElement("span");
+      intro_text.id = "greetings";
+      var text = document.createTextNode("hi, take a look around. type 'help' for more info.");
+      intro_text.appendChild(text);
+      intro_text.style.color = 'green';
+      this.echo(intro_text);
+
+
+    }
   }, {
         checkArity: false,
         greetings: false,
         onInit() {
-          this.echo(() => render_art() +
-            `\n\n[[;rgba(78,154,6,0.99);]hi, take a look around. type 'help' for more info.]`)
+          this.echo(render_art());
+          var intro_text = document.createElement("span");
+          intro_text.id = "greetings";
+          intro_text.classList.add("green_text");
+          var text = document.createTextNode("\nhi, take a look around. type 'help' for more info.");
+          intro_text.appendChild(text);
+          
+          this.echo(intro_text);
+          //this.echo(`\n[[;rgba(78,154,6,0.99);]hi, take a look around. type 'help' for more info.]`);
         },
         prompt: () => {return `user@kcrans.com ${pointer.name} % `}});
 }
