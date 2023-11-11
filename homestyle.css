@@ -39,12 +39,36 @@
     font-display: swap;
 }
 
-
 html {
   height: 100%;
   width: 100%;
   font-size: 15px;
 }
+
+/* Header/navbar */
+
+#header { margin: 1em 0 2em 0; }
+#header nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+#header nav a {
+  color: #888;
+  display: inline-block;
+  margin: 0 0.5rem;
+  padding: 0 0;
+  font-size: 1.4em;
+  text-decoration: none;
+}
+#header nav a:first-child { margin-left: 0; }
+#header nav a:last-child { margin-right: 0; }
+#header nav a.current-page {
+  color: #222;
+  box-shadow: 0 0.2rem 0 -0.1rem #BBB;
+}
+#header nav a:hover { color: #222; }
+
 a {
   outline: none;
 }
