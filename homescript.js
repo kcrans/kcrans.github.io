@@ -1,10 +1,21 @@
+document.addEventListener("DOMContentLoaded", function() {
+  const navLinks = document.querySelectorAll(".nav-link");
+  const currentUrl = window.location.pathname;
+  navLinks.forEach(function(link) {
+    console.log(link.getAttribute("href"));
+    if (link.getAttribute("href")=== currentUrl) {
+      link.classList.add("current-page");
+    }
+  });
+});
+
 document.getElementById('CopyButton').addEventListener('click', function(event) {
   event.stopPropagation();  // Prevent triggering the default <summary> behavior
   var textToCopy = document.getElementById('pgp_key').textContent;
   var clippy = document.getElementById('clipboard_svg');
   var checky = document.getElementById('checkmark_svg');
   var texty = document.getElementById('button_text');
-  
+
   navigator.clipboard.writeText(textToCopy).then(() => {
     clippy.style.display = 'none';
     checky.style.display = 'block';
@@ -19,3 +30,4 @@ document.getElementById('CopyButton').addEventListener('click', function(event) 
     texty.textContent = "Copy key";
   }, 3000)
 });
+
