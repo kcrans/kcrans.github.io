@@ -24,6 +24,7 @@ html {
 }
 
 .lsd_green_text {
+  white-space: pre-line;
   color: #fbfd3a;
 }
 
