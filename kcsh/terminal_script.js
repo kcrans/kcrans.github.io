@@ -4,7 +4,7 @@ function play_audio(file_path, callback) {
   sample.play();
 }
 
-function ready() {
+function ready(green_text) {
   const term = jQuery('#terminal').terminal({
     /* greetings: function(callback) {
       var text = "Take a look around?";
@@ -30,27 +30,38 @@ function ready() {
       if (optional_dirs.length == 1 && optional_dirs[0] == "-d") {
         const term_css = document.getElementById("terminal");
         term_css.id = "lsd_terminal";
+        
         const cmd_css = document.getElementsByClassName("cmd")[0];
+        
         const cmd_prompt_css = document.getElementsByClassName("cmd-prompt")[0];
-        const green_css = document.getElementsByClassName("green_text");
+        
+        let green_css = document.getElementsByClassName("green_text");
         Array.from(green_css).forEach((element) => {
+          element.classList.remove("green_text");
           element.classList.add("lsd_green_text");
         });
+        green_text = "lsd_green_text";
         
         cmd_css.classList.add("lsd_cmd");
         cmd_prompt_css.classList.add("lsd_cmd_prompt");
+        
         const lsd_img = new Image(200, 200);
         lsd_img.src = "lsd_search1.png";
         this.echo(lsd_img);
         this.echo("wait, that isn't a directory!!!");
+        
         function clean_up() {
           term_css.id = "terminal";
           cmd_css.classList.remove("lsd_cmd");
           cmd_prompt_css.classList.remove("lsd_cmd_prompt");
+          green_css = document.getElementsByClassName("lsd_green_text");
           Array.from(green_css).forEach((element) => {
             element.classList.remove("lsd_green_text");
+            element.classList.add("green_text");
           });
+          green_text = "green_text";
         }
+        
         play_audio("Starting_Over.mp3", clean_up);
         //term_css.id = "terminal";
         //console.log(style.getPropertyValue("--color"));
@@ -214,7 +225,8 @@ function ready() {
       if (optional_args.length == 0) {
         var vim_text = document.createElement("span");
         vim_text.id = "vim";
-        vim_text.classList.add("green_text");
+        vim_text.classList.add(green_text);
+        console.log(green_text);
         var text = document.createTextNode("VIM - Vi IMproved\ntry opening a file");
         vim_text.appendChild(text);
         this.echo(vim_text);
@@ -242,17 +254,7 @@ function ready() {
         },
                 {prompt: ":",
                 name: "vi"});
-    }},
-    test: function(...optional_args) { 
-      var intro_text = document.createElement("span");
-      intro_text.id = "greetings";
-      var text = document.createTextNode("hi, take a look around. type 'help' for more info.");
-      intro_text.appendChild(text);
-      intro_text.style.color = 'green';
-      this.echo(intro_text);
-
-
-    }
+    }}
   }, {
         checkArity: false,
         greetings: false,
@@ -260,7 +262,7 @@ function ready() {
           this.echo(render_art());
           var intro_text = document.createElement("span");
           intro_text.id = "greetings";
-          intro_text.classList.add("green_text");
+          intro_text.classList.add(green_text);
           var text = document.createTextNode("\nhi, take a look around. type 'help' for more info.");
           intro_text.appendChild(text);
           
@@ -282,4 +284,4 @@ function render_art() {
   return ascii_art;
 }
 
-ready();
+ready("green_text");
