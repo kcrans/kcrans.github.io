@@ -1,0 +1,37 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+#terminal {
+  --size: 1.3;
+  --color: #ddd;
+  --background: #151515;
+  --font: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+#lsd_terminal{
+  --size: 1.3;
+  --color: #ff861b;
+  --background: #060200;
+  --font: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  --glow: 1;
+}
+
+.green_text {
+  white-space: pre-line;
+  color: rgba(78,154,6,0.99);
+}
+
+.lsd_green_text {
+  white-space: pre-line;
+  color: #fbfd3a;
+}
+
+.lsd_cmd {
+  --color: #fbfd3a;
+}
+
+.lsd_cmd_prompt {
+  --color: #730802;
+}
