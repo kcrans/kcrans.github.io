@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ SITEURL }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/tufte.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <h1>{{ SITENAME }}</h1>
+        </header>
+        <section id="content">
+            {% for article in articles %}
+            <article>
+                <header>
+                    <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
+                    <p class="meta">Posted on {{ article.date }}</p>
+                </header>
+                <div class="article-content">
+                    {{ article.content }}
+                </div>
+            </article>
+            {% endfor %}
+        </section>
+        <aside>
+            <h2>About</h2>
+            <p>{{ AUTHOR_BIO }}</p>
+        </aside>
+        <footer>
+            <p>&copy; {{ CURRENT_YEAR }} {{ AUTHOR }}</p>
+        </footer>
+    </div>
+</body>
+</html>
+
