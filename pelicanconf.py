@@ -28,6 +28,10 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+ARTICLE_URL = 'posts/{slug}/'
+ARTICLE_SAVE_AS = 'posts/{slug}/index.html'
+INDEX_SAVE_AS = 'posts/index.html'
+
 # Blogroll
 #LINKS = (
 #    ("Pelican", "https://getpelican.com/"),

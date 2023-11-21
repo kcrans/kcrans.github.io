@@ -1,3 +1,9 @@
+Title: Grad Cap Project
+Tags: projects, embedded
+Slug: grad-cap
+Authors: Kaleb Crans
+Summary: How I styled my graduation cap
+
 ## The idea
 When I graduated from university earlier this year, I wanted to decorate my cap in some CS-y way. So some sort of embedded project made sense. I thought about maybe attaching some LED lights that change color or intensity based off accelerometer readings, but then I saw these HUB75 RGB LED matrix displays on [Adafruit](https://www.adafruit.com/product/4732). They're the same type of display you seen used as billboards, in airport terminals, etc...
 

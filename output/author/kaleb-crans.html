@@ -1,41 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-        <title>kaleb's site - Articles by Kaleb Crans</title>
-        <meta charset="utf-8" />
-        <meta name="generator" content="Pelican" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/theme/tufte.css">
 </head>
-
 <body>
+    <div id="container">
         <header>
-              <hgroup><h1><a href="/">kaleb's site</a></h1></hgroup>
-        <nav><ul>
-            <li><a href="/category/posts.html" >posts</a></li>
-        </ul></nav>
+            <h1>kaleb's site</h1>
         </header>
-        <main>
-<h2>Articles by Kaleb Crans</h2>
-
-
-        <article>
-                <header> <h2><a href="/hello-world.html" rel="bookmark" title="Permalink to Welcome!">Welcome!</a></h2> </header>
-                <section><p>An Introduction</p></section>
-                <footer>
-                    <p>Published: <time datetime="2023-11-17T15:17:00-08:00"> Fri 17 November 2023 </time></p>
-                    <address>By
-                        <a href="/author/kaleb-crans.html">Kaleb Crans</a>
-                    </address>
-                </footer>
-        </article>
-
-
-        </main>
+        <section id="content">
+            <article>
+                <header>
+                    <h2><a href="/posts/grad-cap/">Grad Cap Project</a></h2>
+                    <p class="meta">Posted on 2023-11-20 15:06:39.155108-08:00</p>
+                </header>
+                <div class="article-content">
+                    <h2>The idea</h2>
+<p>When I graduated from university earlier this year, I wanted to decorate my cap in some CS-y way. So some sort of embedded project made sense. I thought about maybe attaching some LED lights that change color or intensity based off accelerometer readings, but then I saw these HUB75 RGB LED matrix displays on <a href="https://www.adafruit.com/product/4732">Adafruit</a>. They're the same type of display you seen used as billboards, in airport terminals, etc...</p>
+<p>In order to control the display, I decided to go with a Teensy 4.1. There are attachments for <a href="https://www.adafruit.com/product/3211">Raspberry Pis</a> and even all-in-one <a href="https://www.makerfabs.com/esp32-trinity.html">ESP32 units</a>. But I went with a Teensy because it's compact and can be used for other projects in the future. Instead of wiring a bare Teensy to the display (which would likely need 5V level shifters and be bulky), I used the <a href="https://www.crowdsupply.com/pixelmatix/smartled-shield-for-teensy-4#products">SmartLED shield</a> which is designed to work with the helpful <a href="https://github.com/pixelmatix/SmartMatrix/">SmartMatrix</a> library. One of the most common uses of the library is to display animated gifs, which I thought would be an easy way to display some cool graphics. </p>
+<h2>The build</h2>
+<p>In sum, the supplies I used were:
+* 64x64 RGB LED Matrix with 3mm Pitch
+* Teensy 4.1 (headers were pre-soldered, but you can solder your own)
+* SmartLED Shield for Teensy 4
+* 20,000 mAh USB power bank
+* USB cables (preferably power-only)
+* 4x4 Matrix Keypad
+* microSD Card</p>
+<p>I used Velcro strips to affix the panel and keypad to my graduation cap, and cut holes through the top in order to bring the wiring behind my neck.</p>
+<h2>Results</h2>
+                </div>
+            </article>
+            <article>
+                <header>
+                    <h2><a href="/posts/hello-world/">Welcome!</a></h2>
+                    <p class="meta">Posted on 2023-11-17 15:17:00-08:00</p>
+                </header>
+                <div class="article-content">
+                    <p>Hi, welcome to my blog! My plan is to post writeups for projects I work on here, and also just anything else I find interesting that deserves more than a tweet. The internet is full of dead blogs that started off with intentions like mine, so let's see how long this one lasts. If I make a substack, I'll be sure to let you know. </p>
+                </div>
+            </article>
+        </section>
+        <aside>
+            <h2>About</h2>
+            <p></p>
+        </aside>
         <footer>
-                <address>
-                Proudly powered by <a rel="nofollow" href="https://getpelican.com/">Pelican</a>,
-                which takes great advantage of <a rel="nofollow" href="https://www.python.org/">Python</a>.
-                </address>
+            <p>&copy;  Kaleb Crans</p>
         </footer>
+    </div>
 </body>
 </html>
