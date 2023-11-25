@@ -10,7 +10,7 @@ def get_file_paths(directory):
 
 AUTHOR = 'Kaleb Crans'
 SITENAME = "kaleb's site"
-SITEURL = ""
+SITEURL = "" # Taken care of with Github action
 
 PATH = "content"
 
@@ -18,6 +18,7 @@ TIMEZONE = 'America/Los_Angeles'
 
 DEFAULT_LANG = 'en'
 DEFAULT_DATE = 'fs'
+DEFAULT_DATE_FORMAT = '%B %-d, %Y'
 
 THEME = 'themes/tufteblog'
 
