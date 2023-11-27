@@ -49,7 +49,6 @@ html {
 
 #header { margin: 1em 0 2em 0; }
 #header nav {
-  list-style-type: none;
   margin: 0;
   padding: 0;
 }
@@ -57,7 +56,7 @@ html {
   color: #888;
   display: inline-block;
   margin: 0 0.5rem;
-  padding: 0 0;
+  padding: 0 0.1rem;
   font-size: 1.4em;
   text-decoration: none;
 }
@@ -65,22 +64,17 @@ html {
 #header nav a:last-child { margin-right: 0; }
 #header nav a.current-page {
   color: #222;
-  box-shadow: 0 0.2rem 0 -0.1rem #BBB;
+  box-shadow: 0 0.2rem 0 -0.1rem;
 }
-#header nav a:hover { color: #222; }
+#header nav a:link, a:visited, a:hover { color: inherit; }
 
 a {
   outline: none;
 }
 
-a:link {
+a:link, a:visited {
   color: maroon;
 }
-
-a:visited {
-  color: grey;
-}
-
 
 a:focus {
   text-decoration: none;

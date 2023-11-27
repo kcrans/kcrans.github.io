@@ -18,6 +18,31 @@
 #header nav a:last-child { margin-right: 0; }
 #header nav a.current-page {
   color: #222;
-  box-shadow: 0 0.2rem 0 -0.1rem #BBB;
+  box-shadow: 0 0.2rem 0 -0.1rem;
 }
 #header nav a:hover { color: #222; }
+
+/* For all other links */
+a {
+  outline: none;
+}
+
+a:link, a:visited {
+  color: maroon;
+}
+
+a:focus {
+  text-decoration: none;
+  background: maroon;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  background: silver;
+}
+
+a:active {
+  background: maroon;
+  color: silver;
+}
