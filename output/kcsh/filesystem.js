@@ -116,8 +116,10 @@ tmp_dir.insert(new File("now.txt", null, "Currently I'm getting cracked at liner
 var pointer = home_dir;
 var last_pointer = home_dir;
 
+/* Tests:
 console.log(filesystem.name);
 console.log(filesystem.contains("home"));
 console.log(filesystem.print_contents());
 console.log(home_dir.print_contents());
+*/
 console.log(home_dir.get_member("cat").source);

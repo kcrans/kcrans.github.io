@@ -12,14 +12,11 @@ function ready(green_text) {
       callback(console.log("Ran a greeting"));
     }, */
     vi: function(value) {    
-      this.error(`${value} not found`);
-      this.typing('echo', 100, 'Hello', function() {  });
+      this.error("Error: Vi not found \nTry Vim instead");
     },
     echo: function(input) {
       const some_text = String(input);
       const str_length = some_text.length;
-      console.log(some_text);
-      console.log(str_length);
       const message = `${"echo\n".repeat(str_length)}${some_text}`;
       this.typing('echo', 100, message, function() {return "ccvc"} );
     },
@@ -68,7 +65,6 @@ function ready(green_text) {
       }
       else if (optional_dirs.length > 0) {
         for (const file_or_dir of optional_dirs) {
-          console.log(file_or_dir);
           if (!pointer.contains(file_or_dir)) {
             this.echo(`ls: ${file_or_dir}: No such file or directory`);
             has_error = true;
@@ -226,27 +222,29 @@ function ready(green_text) {
         var vim_text = document.createElement("span");
         vim_text.id = "vim";
         vim_text.classList.add(green_text);
-        console.log(green_text);
         var text = document.createTextNode("VIM - Vi IMproved\ntry opening a file");
         vim_text.appendChild(text);
         this.echo(vim_text);
       }
       else {
-        const way_out = new Image(300, 203);
-        way_out.src = "first-contact-way.png";
         this.error("hahaha, you are trapped🔒");
         var counter = 0;
         this.push(function(command) {
-          command = command.trim();
-          if (command == "q" || command == "wq" || command == "q!" || command == "wqa")           {
-            term.echo("whaaaaaat? this wasn't suppose to be easy");
-            term.pop();
-          }
+            command = command.trim();
+            if (command == "q" || command == "wq" || command == "q!" || command == "wqa")
+            {
+                term.echo("whaaaaaat? this wasn't suppose to be easy");
+                term.pop();
+            }
           else {
+            // console.log(counter);
             ++counter;
             if (counter == 3) {
-              this.echo(way_out);
-              this.error("help, by way of @caseyjohnellis")
+              const way_out = new Image(300, 203);
+              way_out.src = "first-contact-way.png";
+              way_out.alt = "Hint: use q! to exit vim!";
+              way_out.title = "Credit to @caseyjohnellis for this image";
+              term.echo(way_out);
             }
             else
               term.error("try again if you dare");
