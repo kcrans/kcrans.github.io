@@ -64,7 +64,7 @@ adds dark mode
         color: #ddd;
     }
 }
-
+*/
 h1 {
     font-weight: 400;
     margin-top: 4rem;
@@ -140,7 +140,7 @@ p {
     margin-bottom: 1.4rem;
     padding-right: 0;
     vertical-align: baseline;
-} */
+}
 
 /* Chapter Epigraphs */
 div.epigraph {
