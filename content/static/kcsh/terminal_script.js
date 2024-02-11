@@ -209,6 +209,12 @@ function ready(green_text) {
         this.error("Error: This filesystem is read-only");
       }
     },
+    waste: function(...optional_args) {
+        const horn_img = new Image(30, 20);
+        horn_img.src = "horn.jpg";
+        this.echo(horn_img);
+
+    },
     rm: function(...optional_args) {
       if (optional_args.length == 0)
         this.error("usage: rm [-f | -i] [-dIPRrvWx] file ...\n       rmunlink [--] file");
