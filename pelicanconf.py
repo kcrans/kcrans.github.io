@@ -1,4 +1,5 @@
 import os
+from datetime import date
 
 # Used to get the file paths of all static files
 def get_file_paths(directory):
@@ -19,6 +20,7 @@ TIMEZONE = 'America/Los_Angeles'
 DEFAULT_LANG = 'en'
 DEFAULT_DATE = 'fs'
 DEFAULT_DATE_FORMAT = '%B %-d, %Y'
+CURRENT_YEAR = date.today().year
 
 THEME = 'themes/tufteblog'
 

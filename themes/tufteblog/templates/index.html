@@ -7,6 +7,11 @@
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/navbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+<style>
+    article {
+        padding: 0rem 0rem;
+    }
+</style>
 <body>
     <header id="header">
         <nav>
@@ -22,7 +27,7 @@
         {% endfor %}
     </section>
     <footer>
-        <p>&copy; {{ CURRENT_YEAR }} {{ AUTHOR }}</p>
+        &copy; {{ CURRENT_YEAR }} {{ AUTHOR }}
     </footer>
     <script src="{{ SITEURL }}/theme/navbar.js"></script>
 </body>
