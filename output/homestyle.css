@@ -140,8 +140,6 @@ li > span {
   color: #111;
 }
 
-
-
 #terminal_block {
   font-size: 1.2rem;
   color: maroon;
@@ -168,13 +166,13 @@ li > span {
   display: block;
 }
 
-#terminal_icon:hover, #terminal_link:focus > #terminal_icon {
+/* #terminal_icon:hover, #terminal_link:focus > #terminal_icon {*/
   /*color: rgba(255, 255, 255, 1);*/
-  padding: 0;
+  /* padding: 0;*/
   /*border: solid 1px;*/
-  border-radius: 3vw;
-  box-shadow: 2px 2px 2px 2px maroon;
-}
+  /* border-radius: 3vw;*/
+  /*box-shadow: 2px 2px 2px 2px maroon;*/
+/*}*/
 
 @media (max-width: 768px) {
     body {
