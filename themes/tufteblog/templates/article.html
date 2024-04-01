@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>{{ SITEURL }}</title>
+    <title>{{ article.title }}</title>
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/tufte.css">
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/navbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,13 +13,10 @@
             <a class="nav-link" href="/">about</a><a class="nav-link" href="/posts">blog</a>
         </nav>
     </header>
-    <article>
-            <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-            <section>
-                <p class="meta">Posted on {{ article.locale_date }}</p>
-                {{ article.content }}
-            </section>
-    </article>
+    <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
+    <p class="subtitle">{{ article.summary}}</p>
+    <p class="meta">Posted on {{ article.locale_date }}</p>
+    {{ article.content }}
     <footer>
         <p>&copy; {{ CURRENT_YEAR }} {{ AUTHOR }}</p>
     </footer>
