@@ -1,5 +1,5 @@
 Title: Grad Cap Project
-Date: 2023-10-17 5:01
+Date: 2023-11-20 15:02
 Tags: projects, embedded
 Slug: grad-cap
 Authors: Kaleb Crans
