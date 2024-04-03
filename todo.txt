@@ -1,0 +1,2 @@
+* Write Markdown extension which outputs html along the lines of what tufte-cc expects.
+* Fix bug rendering non-ascii characters when using Pelican's built-in simple server.
