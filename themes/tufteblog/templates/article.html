@@ -7,20 +7,23 @@
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/navbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
+
 <body>
     <header id="header">
         <nav>
             <a class="nav-link" href="/">about</a><a class="nav-link" href="/posts">blog</a>
         </nav>
     </header>
-    <h1><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
-    <p class="subtitle">{{ article.summary}}</p>
-    <p class="meta">Posted on {{ article.locale_date }}</p>
-    {{ article.content }}
-    <footer>
-        <p>&copy; {{ CURRENT_YEAR }} {{ AUTHOR }}</p>
-    </footer>
-    <script src="{{ SITEURL }}/theme/navbar.js"></script>
+    <article>
+        <h1 id={{ article.title }}><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1>
+        <p class="subtitle">{{ article.summary}}</p>
+        <p class="meta">Posted on {{ article.locale_date }}</p>
+        {{ article.content }}
+        <footer>
+            <p>&copy; {{ CURRENT_YEAR }} {{ AUTHOR }}</p>
+        </footer>
+        <script src="{{ SITEURL }}/theme/navbar.js"></script>
+    </article>
 </body>
 </html>
 

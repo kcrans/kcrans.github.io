@@ -35,6 +35,18 @@ ARTICLE_URL = 'posts/{slug}/'
 ARTICLE_SAVE_AS = 'posts/{slug}/index.html'
 INDEX_SAVE_AS = 'posts/index.html'
 
+# Markdown config options
+MARKDOWN = {
+    'extension_configs': {
+        'markdown.extensions.codehilite': {'css_class': 'highlight'},
+        'markdown.extensions.meta': {},
+        'tufte_markdown.tufte_markdown:TufteExtension': {},
+    },
+    'output_format': 'html5',
+}
+
+
+
 # Blogroll
 #LINKS = (
 #    ("Pelican", "https://getpelican.com/"),
