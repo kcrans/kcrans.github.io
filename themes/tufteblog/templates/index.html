@@ -22,7 +22,8 @@
         {% for article in articles %}
         <article>
             <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-                <p class="meta">Posted on {{ article.locale_date }}</p>
+            <p>{{ article.summary }}</p>    
+            <p class="meta">Posted on {{ article.locale_date }}</p>
         </article>
         {% endfor %}
     </section>

@@ -2,8 +2,9 @@ Title: Grad Cap Project
 Date: 2023-11-20 15:02
 Tags: projects, embedded
 Slug: grad-cap
-Authors: Kaleb Crans
-Summary: How I styled my graduation cap
+Author: Kaleb Crans
+Summary: Turning my university graduation cap into an embedded project
+Subtitle: A little project I did for my graduation ceremony
 
 At least in America, customizing and decorating graduation caps is a common tradition. When I graduated from university earlier this year, I wanted to do something special. Something related to what I studied (Math and CS) but also creative and possibly interactive. So some sort of embedded project made sense. I thought about maybe attaching some LED lights that change color or intensity based on accelerometer readings, but then I saw these HUB75 RGB LED matrix displays on [Adafruit](https://www.adafruit.com/product/4732). They're the same type of display you see used as billboards, in airport terminals, etc... but in a much smaller form-factor also perfect for the dimensions of a square graduation cap. I wasn't sure what I wanted to put on the display, but the great thing about a led screen is I could quickly put up whatever I want whenever I want.
 
@@ -28,7 +29,7 @@ I used Velcro strips to affix the panel and keypad to my graduation cap, and cut
 ![Cap taken apart]({static}/images/cap_internals.jpg)
 And here is what the underside of the cap looks like:
 ![Pic of cap taken from below]({static}/images/cap_from_below.jpg)
-I was able to route the power cables behind my neck, and it actually wasn't uncomfortable at all.
+I was able to route the power cables behind my neck, and it actually wasn't uncomfortable at all. That is, the physical modifications to the cap did not affect the comfort, but the weight of the display on top meant the cap was not as easily positionable.
 
 ## Results
 

@@ -1,9 +1,13 @@
 from markdown.extensions import Extension
+from markdown.preprocessors import Preprocessor
 from markdown.blockprocessors import BlockProcessor
 from markdown.treeprocessors import Treeprocessor
 from markdown.inlinepatterns import InlineProcessor, LinkInlineProcessor, IMAGE_REFERENCE_RE
 import xml.etree.ElementTree as etree
 import re
+from copy import deepcopy
+
+meta_identifer = "vE+8*J(Y,gHM&U0Q?v-h4x%/9id4*.utSvt%,DQh4S#)tf#0)L"
 
 class SectionProcessor(BlockProcessor):
     # Parses blocks of text which start with a title/header
@@ -96,10 +100,33 @@ class FirstSectionProcessor(Treeprocessor):
     """ Build and append footnote div to end of document. """
 
     def run(self, root: etree.Element) -> None:
-        for element in root.iter():
-#            print(f'<{element.tag}>: ', element.text)
-#        print("------------------")
+        tree_list = list(root)
+        end_of_intro = len(tree_list)
+#        print('----')
+#        for element in root.iter():
+#            print(element.tag)
+#        print('____')
+       # print(tree_list)
+        if tree_list[0].text == meta_identifier:
+            root.remove(tree_list[0])
+            return
+        for index, top_lvl_element in enumerate(tree_list):
+            #print(top_lvl_element.tag)
+            if top_lvl_element.tag == 'section':
+                #print(index, '---------------------------------')
+                end_of_intro = index + 1
+                break
+        first_section = etree.Element('section')
+        root.insert(0, first_section)
+        
+        for index in range(0, end_of_intro):
+            current_el = tree_list[index]
+            first_section.append(deepcopy(current_el))
+            root.remove(current_el)
 
+        #print(list(root))
+#        for element in root.iter():
+            #print(element.tag)
 
 # Depreciated Processor:
 class ImageInsideFigureProcessor(LinkInlineProcessor):
@@ -186,6 +213,32 @@ class MarginNoteProcessor(InlineProcessor):
 
         return container, m.start(0), m.end(0)
 
+# Matches a line of metadata, EX:
+#   Some_Meta-data:     woah this is cool metadata
+META_RE = re.compile(r'^[ ]{0,3}(?P<key>[A-Za-z0-9_-]+):\s*(?P<value>.*)')
+# Matches metadata start signifiers, EX:
+# ---          
+BEGIN_RE = re.compile(r'^-{3}(\s.*)?')
+
+
+class MetadataTestPreprocessor(Preprocessor):
+    """
+    Checks to see if there is any metadata in the given Markdowm document.
+    If there is, then it's an article and the process proceeds normally.
+    If not, then this must be a Markdown process run on a formatted piece of metadata
+    already taken from an article (like "summary" for instance).
+    """
+    def run(self, lines: list[str]) -> list[str]:
+        if lines:
+            if BEGIN_RE.match(lines[0]) or META_RE.match(lines[0]):
+                # Change nothing, continue processing document
+                return lines
+            else:
+                blank_line = ""
+                lines.insert(0, blank_line)
+                line = meta_identifier
+                lines.insert(0, line)
+        return lines
 
 class TufteExtension(Extension):
     def extendMarkdown(self, md):
@@ -193,12 +246,16 @@ class TufteExtension(Extension):
         RE_SIDENOTE = r'\[\^s\s(.*?)\]' # Example: [^s This is a sidenote!]
         RE_MARGIN_NOTE = r'\[\^m\s(.*?)\]' # Example: [^m This is a margin note!]
 
+        metadata_test_processor = MetadataTestPreprocessor(md)
+
         section_processor = SectionProcessor(md.parser)
         img_block_processor = ImageBlockProcessor(md.parser)
         first_section_processor = FirstSectionProcessor(md)
         sidenote_processor = SidenoteProcessor(RE_SIDENOTE, md)
         margin_note_processor = MarginNoteProcessor(RE_MARGIN_NOTE, md)
 #        img_processor = ImageInsideFigureProcessor(IMAGE_REFERENCE_RE, md)
+        md.preprocessors.register(metadata_test_processor, 'test', 28)
+
         md.parser.blockprocessors.register(section_processor, "wrap_subheaders_in_sections", 175)
         md.parser.blockprocessors.register(img_block_processor, "prevent_paragraphs_containing_imgs", 11)
         md.treeprocessors.register(first_section_processor, "creates_first_section_under_h1", 50)

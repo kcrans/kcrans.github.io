@@ -3,9 +3,8 @@ Date: 2024-03-22 16:23
 Tags: projects, embedded, keyboards
 Slug: micromacro
 Authors: Kaleb Crans
-Summary: Notes on building a hand-wired, hand-coded keyboard
-
-# Introducing micromacro
+Summary: Notes on building a hand-wired, hand-coded macropad
+Subtitle: Notes on building a hand-wired, hand-coded macropad
 
 In high school I was pretty interested in mechanical keyboards - aesthetic keycaps, weird layouts, annoyingly loud switches and all that. I'm long past my days believing in their superiority, but I still have lots of switches and keycaps lying around so I decided to make a little project to put those components to good use. I've never made a handwired keyboard before, and I thought it would be fun to write my own firmware instead of using unnecessarily complex frameworks like QMK. The result? A compact macropad that makes it stupidly easy to create map keys to macros and arbitrary combinations of keystrokes. I call it
 ![micromacro logo]({static}/images/mm_logo.png)
