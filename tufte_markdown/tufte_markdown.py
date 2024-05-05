@@ -7,7 +7,7 @@ import xml.etree.ElementTree as etree
 import re
 from copy import deepcopy
 
-meta_identifer = "vE+8*J(Y,gHM&U0Q?v-h4x%/9id4*.utSvt%,DQh4S#)tf#0)L"
+meta_identifier = "vE+8*J(Y,gHM&U0Q?v-h4x%/9id4*.utSvt%,DQh4S#)tf#0)L"
 
 class SectionProcessor(BlockProcessor):
     # Parses blocks of text which start with a title/header
