@@ -109,7 +109,7 @@ projects_dir.insert(new File("ray-bandit", null, "https://github.com/kcrans/ray-
 projects_dir.insert(new File("titi-monkey-tech", null, "https://github.com/kcrans/titi-monkey-tech", "link"))
 
 dev_dir.insert(new File("src", null, "https://github.com/kcrans/kcrans.github.io", "link"));
-dev_dir.insert(new File(".secret", null, "What band did some members of Uncle Tupelo start after that band split up?", "text"))
+dev_dir.insert(new File(".secret", null, "Yankee Hotel Foxtrot, the fourth studio album by:", "text"))
 
 tmp_dir.insert(new File("now.txt", null, "Currently I'm getting cracked at liner algebra, working on way too many projects, and learning about analog synths." , "text"));
 

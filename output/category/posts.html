@@ -3,14 +3,29 @@
 <head>
     <meta charset="utf-8"/>
     <title></title>
-    <link rel="stylesheet" type="text/css" href="/theme/tufte.css">
+    <link rel="stylesheet" type="text/css" href="/theme/article_index.css">
     <link rel="stylesheet" type="text/css" href="/theme/navbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-    article {
-        padding: 0rem 0rem;
+    p {
+        margin-top: 0;
     }
+    .title-and-date {
+        display: flex;
+        align-items: center;
+    }
+    .title-and-date h3 {
+        width: 55%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .published-date {
+    width: 45%;
+    padding-left: 10px;
+    font-style: italic;
+    }
+
 </style>
 <body>
     <header id="header">
@@ -19,26 +34,22 @@
         </nav>
     </header>
     <section id="content">
-        <article>
-            <h2><a href="/posts/micromacro/">Introducing micromacro</a></h2>
-            <p><p>Notes on building a hand-wired, hand-coded macropad</p></p>    
-            <p class="meta">Posted on March 22, 2024</p>
-        </article>
-        <article>
-            <h2><a href="/posts/advent-of-code-2023/">Advent of Code 2023</a></h2>
-            <p><p>My solutions for 2023's Advent of Code</p></p>    
-            <p class="meta">Posted on December 22, 2023</p>
-        </article>
-        <article>
-            <h2><a href="/posts/grad-cap/">Grad Cap Project</a></h2>
-            <p><p>Turning my university graduation cap into an embedded project</p></p>    
-            <p class="meta">Posted on November 20, 2023</p>
-        </article>
-        <article>
-            <h2><a href="/posts/hello-world/">Welcome!</a></h2>
-            <p><p>Hello World</p></p>    
-            <p class="meta">Posted on November 17, 2023</p>
-        </article>
+            <div class="title-and-date"><h3><a href="/posts/micromacro/">Introducing micromacro</a></h3>
+                <div class="published-date">March 22, 2024</div>
+            </div>
+            <p>Notes on building a hand-wired, hand-coded macropad</p>
+            <div class="title-and-date"><h3><a href="/posts/advent-of-code-2023/">Advent of Code 2023</a></h3>
+                <div class="published-date">December 22, 2023</div>
+            </div>
+            <p>My solutions for 2023's Advent of Code</p>
+            <div class="title-and-date"><h3><a href="/posts/grad-cap/">Grad Cap Project</a></h3>
+                <div class="published-date">November 20, 2023</div>
+            </div>
+            <p>Turning my university graduation cap into an embedded project</p>
+            <div class="title-and-date"><h3><a href="/posts/hello-world/">Welcome!</a></h3>
+                <div class="published-date">November 17, 2023</div>
+            </div>
+            <p>Hello World</p>
     </section>
     <script src="/theme/navbar.js"></script>
 </body>

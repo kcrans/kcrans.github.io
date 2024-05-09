@@ -3,14 +3,29 @@
 <head>
     <meta charset="utf-8"/>
     <title>{{ SITEURL }}</title>
-    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/tufte.css">
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/article_index.css">
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/navbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-    article {
-        padding: 0rem 0rem;
+    p {
+        margin-top: 0;
     }
+    .title-and-date {
+        display: flex;
+        align-items: center;
+    }
+    .title-and-date h3 {
+        width: 55%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .published-date {
+    width: 45%;
+    padding-left: 10px;
+    font-style: italic;
+    }
+
 </style>
 <body>
     <header id="header">
@@ -20,11 +35,10 @@
     </header>
     <section id="content">
         {% for article in articles %}
-        <article>
-            <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-            <p>{{ article.summary }}</p>    
-            <p class="meta">Posted on {{ article.locale_date }}</p>
-        </article>
+            <div class="title-and-date"><h3><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h3>
+                <div class="published-date">{{ article.locale_date }}</div>
+            </div>
+            {{ article.summary }}
         {% endfor %}
     </section>
     <script src="{{ SITEURL }}/theme/navbar.js"></script>
