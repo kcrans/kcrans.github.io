@@ -169,6 +169,26 @@ li:not(:first-child) {
     height: 100%;
 }
 
+p {
+    margin-top: 0;
+}
+.title-and-date {
+    display: flex;
+    align-items: center;
+}
+.title-and-date h3 {
+    width: 55%;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.published-date {
+width: 45%;
+padding-left: 10px;
+font-style: italic;
+}
+
+
+
 @media (max-width: 768px) {
     body {
         width: 85%;
@@ -203,6 +223,23 @@ li:not(:first-child) {
 
     label {
         cursor: pointer;
+    }
+
+    .title-and-date {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .title-and-date h3{
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+    .published-date {
+    width: 100%;
+    padding-top: 10px;
+    padding-left: 0;
+    font-style: italic;
     }
 
 }
