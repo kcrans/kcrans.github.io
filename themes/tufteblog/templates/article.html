@@ -5,6 +5,7 @@
     <title>{{ article.title }}</title>
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/tufte.css">
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/navbar.css">
+    <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/article.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
@@ -19,9 +20,7 @@
         <p class="subtitle">{{ article.subtitle }}</p>
         <p class="meta">Posted on {{ article.locale_date }}</p>
         {{ article.content }}
-        <footer>
-            <p>&copy; {{ CURRENT_YEAR }} {{ AUTHOR }}</p>
-        </footer>
+        <hr class="ending-line">
         <script src="{{ SITEURL }}/theme/navbar.js"></script>
     </article>
 </body>
