@@ -71,6 +71,7 @@ h1 {
     margin-bottom: 1.5rem;
     font-size: 3.2rem;
     line-height: 1;
+    color: maroon;
 }
 
 h2 {
@@ -119,7 +120,8 @@ p.subtitle {
 }
 
 article {
-    padding: 5rem 0rem;
+    /*Removed padding in order to accommodate my blog's navbar*/
+    padding: 0rem 0rem;
 }
 
 section {
@@ -210,6 +212,10 @@ figure {
     -webkit-margin-start: 0;
     -webkit-margin-end: 0;
     margin: 0 0 3em 0;
+    
+    /*Added in order to center small images: */
+    display: flex;
+    justify-content: center;
 }
 
 figcaption {
