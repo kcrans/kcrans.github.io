@@ -38,6 +38,7 @@ INDEX_SAVE_AS = 'posts/index.html'
 # Markdown config options
 MARKDOWN = {
     'extension_configs': {
+        'markdown.extensions.fenced_code': {},
         'markdown.extensions.codehilite': {'css_class': 'highlight'},
         'markdown.extensions.meta': {},
         'tufte_markdown.tufte_markdown:TufteExtension': {},
