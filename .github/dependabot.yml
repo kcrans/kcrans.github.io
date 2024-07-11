@@ -1,0 +1,8 @@
+# Set update schedule for GitHub Actions
+
+version: 2
+updates:
+  - package-ecosystem: "github-actions"
+    directory: "/" # Location of package manifests
+    schedule: # Check for updates to the Github Actions custom workflow every month
+      interval: "monthly"
