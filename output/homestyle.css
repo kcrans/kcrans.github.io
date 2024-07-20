@@ -124,7 +124,7 @@ h1 {
   line-height: 1;
 }
 
-p, details, ul {
+p, details, ul, .links-container {
   font-size: 1.2rem;
   line-height: 2rem;
   margin-top: 1.4rem;
@@ -140,47 +140,13 @@ li > span {
   color: #111;
 }
 
-#terminal_block {
-  font-size: 1.2rem;
-  color: maroon;
-  position: fixed;
-  bottom: 2vh;
-  right: 2vw;
-  /*border: 1px solid #ccc;*/
-  padding: 2px;
-  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);*/
-  text-align: center;
-  max-width: 150px;
-  min-width: 50px;
-  width: 15vw; /*15% of screen horizontally */
-  height: auto; /* keeps the same square aspect ratio */
-}
-
-#terminal_link {
-  background: #fffff8  ;
-}
-
-#terminal_icon {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* #terminal_icon:hover, #terminal_link:focus > #terminal_icon {*/
-  /*color: rgba(255, 255, 255, 1);*/
-  /* padding: 0;*/
-  /*border: solid 1px;*/
-  /* border-radius: 3vw;*/
-  /*box-shadow: 2px 2px 2px 2px maroon;*/
-/*}*/
-
 @media (max-width: 768px) {
     body {
         width: 85%;
         padding-left: 5%;
         padding-right: 10%;
     }
-  p, details {
+  p, details, ul, .links-container {
     width: 100%;
   }
   #terminal_block {
@@ -255,4 +221,27 @@ details[open] summary::before {
 }
 #clipboard_svg, #checkmark_svg {
   transition: opacity 0.3s ease;
+}
+
+/* Styling for the links section */
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row.links {
+    display: flex;
+    align-items: center;
+}
+
+hr.links {
+    flex-grow: 1;
+    height: 0;
+    border-top-width: 2px;
+    border-style: dotted;
+    border-color: rgb(212, 212, 212);
+    margin: 0 20px;
+    border-bottom: none;
+    background: none;
 }
