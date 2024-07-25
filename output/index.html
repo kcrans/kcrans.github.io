@@ -2,10 +2,13 @@
 <html>
   <head>
     <title>kaleb's site</title>
+    <style>
+        body { display: none; }
+    </style>
     <link rel="stylesheet" href="/homestyle.css", type="text/css"> 
     <link rel="manifest" href="/site.webmanifest">
     <link rel="icon" href="/favicon.ico" sizes="32x32"/>
-    <link rel="icon" type="image/svg+xml" href="camp.svg"/>
+    <link rel="icon" type="/image/svg+xml" href="camp.svg"/>
     <link rel="apple-touch-icon" href="/apple-touch-icon.png"/><!-- 180x180 -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
@@ -29,25 +32,12 @@
        `'(_ )_)(_)_)'</span>
     </pre>
      <p id = "about">Hi, my name's Kaleb Crans. I'm an UC Davis graduate who studied math and computer science and I'm currently looking for opportunities in software or data engineering, but I’m open to other kinds of roles. Above all else I want to help solve meaningful, real-world problems. There are incredibly important challenges in space, defense, climate, and manufacturing, and I want to help solve them. My interests include data analysis, GN&amp;C, machine learning, and embedded systems.</p> 
-    </br></br>
-
-    <ul>
-      <li><span>You can find a copy of my resume <a href="/resume" width="100%" height="800px">here.</span></a>
-      </li>
-      <li><span>
-      Or my LinkedIn profile <a href="https://www.linkedin.com/in/kaleb-crans/">here.</a>
-      </li>
-    </span>
-      <li><span>
-      Or even my GitHub account <a href="https://github.com/kcrans">here.</a></span>
-      </li>
-      <li>
-          <span>And my email <a href="mailto:kalebcrans@gmail.com">here.</a></span>
-      </li>
-    </ul>
   </br></br>
   <h2>Links</h2>
   <div class="links-container"> 
+      <div class="row links"><span class="links">Resume</span>
+          <hr class="links">
+          <a class="link links" href="/resume" width=100% height="800px">here</a></div>
       <div class="row links"><span class="links">LinkedIn</span>
           <hr class="links">
           <a class="link links" href="https://www.linkedin.com/in/kaleb-crans/">@kaleb-crans</a></div>
@@ -56,7 +46,7 @@
           <a class="link links" href="https://github.com/kcrans">@kcrans</a></div>
       <div class="row links"><span class="links">Email</span>
           <hr class="links">
-          <a class="link links" href="mailto:kalebrans@gmail.com">kalebcrans@gmail.com</a></div>
+          <a class="link links" href="mailto:kalebcrans@gmail.com">kalebcrans@gmail.com</a></div>
   </div>
 
     <details id = "keys"> 
@@ -89,5 +79,10 @@ KcNF7LsQfLT5bePbHnbxAwk=
 
     <div class="buffer"></div>
     <script src="homescript.js"></script>
+    <script>
+        window.onload = function() {
+            document.body.style.display = 'block';
+        };
+    </script>
   </body>
 </html>

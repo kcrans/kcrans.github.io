@@ -4,17 +4,25 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Kaleb's Resume</title>
+        <style>
+            body { display: none; }
+        </style>
         <link rel="stylesheet" href="/resume/style.css", type="text/css">
     </head>
     <body>
         <header id="header">
             <nav>
-                <a class="nav-link" href="/">about</a><a class="nav-link" href="/posts">blog</a>
+                <a class="nav-link" href="/">about</a><a class="nav-link" href="/posts">blog</a><a class="nav-link" href="/kcsh/index.html">&gt;_</a>
             </nav>
         </header>
         <div id="resume-container">
             <iframe id="resume-iframe" src="../assets/Resume_Kaleb_Crans_Tech_2024.pdf" title="Resume"></iframe>
             <a href="../assets/Resume_Kaleb_Crans_Tech_2024.pdf" class="download-link">click here to download</a>
         </div>
+    <script>
+        window.onload = function() {
+            document.body.style.display = 'block';
+        };
+    </script>
     </body>
 </html>

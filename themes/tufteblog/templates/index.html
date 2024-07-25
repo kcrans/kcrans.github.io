@@ -3,6 +3,16 @@
 <head>
     <meta charset="utf-8"/>
     <title>{{ SITEURL }}</title>
+
+    <style>
+        body {display: none;}
+    </style>
+
+    <link rel="manifest" href="{{ SITEURL }}/site.webmanifest">
+    <link rel="icon" href="{{ SITEURL }}/favicon.ico" sizes="32x32"/>
+    <link rel="icon" type="{{ SITEURL }}/image/svg+xml" href="camp.svg"/>
+    <link rel="apple-touch-icon" href="{{ SITEURL }}/apple-touch-icon.png"/><!-- 180x180 -->
+
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/article_index.css">
     <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/navbar.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,7 +20,7 @@
 <body>
     <header id="header">
         <nav>
-            <a class="nav-link" href="/">about</a><a class="nav-link" href="/posts">blog</a>
+            <a class="nav-link" href="/">about</a><a class="nav-link" href="/posts">blog</a><a class="nav-link" href="/kcsh/index.html">&gt;_</a>
         </nav>
     </header>
     <section id="content">
@@ -22,6 +32,11 @@
         {% endfor %}
     </section>
     <script src="{{ SITEURL }}/theme/navbar.js"></script>
+    <script>
+        window.onload = function() {
+            document.body.style.display = 'block';
+        };
+    </script>
 </body>
 </html>
 
